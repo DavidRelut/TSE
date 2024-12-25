@@ -1,6 +1,5 @@
-import React from "react"
-import styled from "styled-components"
-import { theme } from "../../theme"
+import styled from "styled-components";
+import { theme } from "../../theme/themeSystem";
 
 export default function Tab({ label, Icon, onClick, className }) {
   return (
@@ -8,7 +7,7 @@ export default function Tab({ label, Icon, onClick, className }) {
       <div className="icon">{Icon}</div>
       {label && <span className="label">{label}</span>}
     </TabStyled>
-  )
+  );
 }
 
 const TabStyled = styled.button`
@@ -53,4 +52,4 @@ const TabStyled = styled.button`
   .label {
     margin-left: 13px;
   }
-`
+`;

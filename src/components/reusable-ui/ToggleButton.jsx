@@ -1,6 +1,5 @@
-import React from "react"
-import styled from "styled-components"
-import { theme } from "../../theme"
+import styled from "styled-components";
+import { theme } from "../../theme/themeSystem";
 
 export default function ToggleButton({
   isChecked,
@@ -24,7 +23,7 @@ export default function ToggleButton({
         data-unchecked={labelIfUnchecked}
       ></label>
     </ToggleButtonStyled>
-  )
+  );
 }
 
 const ToggleButtonStyled = styled.div`
@@ -131,4 +130,4 @@ const ToggleButtonStyled = styled.div`
       background-color: ${theme.colors.primary};
     }
   }
-`
+`;

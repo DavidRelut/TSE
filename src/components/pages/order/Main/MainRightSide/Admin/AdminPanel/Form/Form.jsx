@@ -1,24 +1,32 @@
-import React from "react"
-import styled from "styled-components"
-import ImagePreview from "./ImagePreview"
-import { Inputs } from "./Inputs"
+import React from "react";
+import styled from "styled-components";
+import ImagePreview from "./ImagePreview";
+import { Inputs } from "./Inputs";
 
-const Form = React.forwardRef(({ product, onSubmit, children, onChange, onFocus, onBlur }, ref) => {
-  // state (vide)
+const Form = React.forwardRef(
+  ({ product, onSubmit, children, onChange, onFocus, onBlur }, ref) => {
+    // state (vide)
 
-  // comportements (vide)
+    // comportements (vide)
 
-  // affichage
-  return (
-    <FormStyled onSubmit={onSubmit}>
-      <ImagePreview imageSource={product.imageSource} title={product.title} />
-      <Inputs product={product} onChange={onChange} onFocus={onFocus} onBlur={onBlur} ref={ref} />
-      <div className="form-footer">{children}</div>
-    </FormStyled>
-  )
-})
+    // affichage
+    return (
+      <FormStyled onSubmit={onSubmit}>
+        <ImagePreview imageSource={product.imageSource} title={product.title} />
+        <Inputs
+          product={product}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          ref={ref}
+        />
+        <div className="form-footer">{children}</div>
+      </FormStyled>
+    );
+  }
+);
 
-export default Form
+export default Form;
 
 const FormStyled = styled.form`
   /* border: 2px solid black; */
@@ -38,4 +46,4 @@ const FormStyled = styled.form`
     position: relative;
     top: 3px;
   }
-`
+`;

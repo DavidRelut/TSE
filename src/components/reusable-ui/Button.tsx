@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme/themeSystem";
+import { ComponentProps, JSX } from "react";
 
-type ButtonProps = Readonly<{
+type ButtonVersion = "normal" | "success";
+
+type ButtonProps = {
   label: string;
-  Icon?: React.ReactNode;
-  className?: string;
-  version: "normal" | "success";
-  onClick?: () => void;
-  disabled?: boolean;
-}>;
+  Icon?: JSX.Element;
+  version?: ButtonVersion;
+} & ComponentProps<"button">;
 
 export default function Button({
   label,
@@ -26,12 +26,16 @@ export default function Button({
       disabled={disabled}
     >
       <span>{label}</span>
-      <div className="icon">{Icon && Icon}</div>
+      {Icon && <div className="icon">{Icon}</div>}
     </ButtonStyled>
   );
 }
 
-const ButtonStyled = styled.button<Pick<ButtonProps, "version">>`
+type ButtonStyledProps = {
+  version: ButtonVersion;
+};
+
+const ButtonStyled = styled.button<ButtonStyledProps>`
   ${({ version }) => extraStyle[version]};
 `;
 

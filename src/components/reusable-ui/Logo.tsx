@@ -1,11 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../theme/themeSystem";
+import { ComponentProps } from "react";
 
-type LogoProps = Readonly<{
-  className?: string;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
-}>;
-
+type LogoProps = ComponentProps<"div">;
 export default function Logo({ className, onClick }: LogoProps) {
   return (
     <LogoStyled className={className} onClick={onClick}>

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../theme/themeSystem";
 
-type RibbonProps = Readonly<{
+type RibbonProps = {
   label?: string;
   className?: string;
-}>;
+};
 
 export default function Ribbon({ label = "new", className }: RibbonProps) {
   return (

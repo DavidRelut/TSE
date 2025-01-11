@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../theme/themeSystem";
 
-type StickerProps = Readonly<{
+type StickerProps = {
   label?: string;
   className?: string;
-}>;
+};
 
 export default function Sticker({ label = "new", className }: StickerProps) {
   return <StickerStyled className={className}>{label}</StickerStyled>;

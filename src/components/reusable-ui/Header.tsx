@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme/themeSystem";
 
-type HeaderProps = Readonly<{
+type HeaderProps = {
   children: React.ReactNode;
-}>;
+};
 
 export default function Header({ children }: HeaderProps) {
   return <HeaderStyled>{children}</HeaderStyled>;

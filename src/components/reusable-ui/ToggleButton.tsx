@@ -1,13 +1,19 @@
-import React from "react"
-import styled from "styled-components"
-import { theme } from "../../theme"
+import styled from "styled-components";
+import { theme } from "@/theme/themeSystem";
+
+type ToggleButtonProps = Readonly<{
+  isChecked: boolean;
+  onToggle: React.ChangeEventHandler<HTMLInputElement>;
+  labelIfChecked?: string;
+  labelIfUnchecked?: string;
+}>;
 
 export default function ToggleButton({
   isChecked,
   onToggle,
   labelIfChecked = "Fermer",
   labelIfUnchecked = "Ouvrir",
-}) {
+}: ToggleButtonProps) {
   return (
     <ToggleButtonStyled>
       <input
@@ -16,6 +22,7 @@ export default function ToggleButton({
         id="rounded"
         checked={isChecked}
         onChange={onToggle}
+        aria-label={isChecked ? labelIfChecked : labelIfUnchecked}
       />
       <label
         htmlFor="rounded"
@@ -24,7 +31,7 @@ export default function ToggleButton({
         data-unchecked={labelIfUnchecked}
       ></label>
     </ToggleButtonStyled>
-  )
+  );
 }
 
 const ToggleButtonStyled = styled.div`
@@ -131,4 +138,4 @@ const ToggleButtonStyled = styled.div`
       background-color: ${theme.colors.primary};
     }
   }
-`
+`;

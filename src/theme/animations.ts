@@ -1,7 +1,13 @@
-import { css, keyframes } from "styled-components"
-import { theme } from "."
+import {
+  css,
+  keyframes,
+  FlattenSimpleInterpolation,
+  Keyframes,
+} from "styled-components";
+import { theme } from "./themeSystem";
 
-export const fadeIn = keyframes`
+// Types pour les keyframes
+export const fadeIn: Keyframes = keyframes`
   0% {
     opacity: 0;
   }
@@ -9,9 +15,9 @@ export const fadeIn = keyframes`
   100% {
     opacity: 1;
   }
-`
+`;
 
-export const fadeInFromRight = keyframes`
+export const fadeInFromRight: Keyframes = keyframes`
   0% {
     position: absolute;
     z-index: -1;
@@ -23,9 +29,9 @@ export const fadeInFromRight = keyframes`
     opacity: 1;
     transform: translateX(0);
   }
-`
+`;
 
-export const fadeInFromTop = keyframes`
+export const fadeInFromTop: Keyframes = keyframes`
   0% {
     position: absolute;
     z-index: 1;
@@ -37,9 +43,9 @@ export const fadeInFromTop = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`
+`;
 
-export const fadeInFromBottom = keyframes`
+export const fadeInFromBottom: Keyframes = keyframes`
   0%{
     transform: translateY(100%);
     opacity: 0;
@@ -50,9 +56,10 @@ export const fadeInFromBottom = keyframes`
     opacity: 1;
   }
 
-`
+`;
 
-export const adminAnimation = css`
+// Types pour les animations CSS
+export const adminAnimation: FlattenSimpleInterpolation = css`
   .admin-appear {
     opacity: 0.1;
     transform: translateY(100%);
@@ -62,9 +69,9 @@ export const adminAnimation = css`
       transition: all 500ms;
     }
   }
-`
+`;
 
-export const basketAnimation = css`
+export const basketAnimation: FlattenSimpleInterpolation = css`
   .animation-basket-appear {
     .card {
       transform: translateX(100px);
@@ -106,9 +113,9 @@ export const basketAnimation = css`
       transition: ${theme.animations.speed.quick};
     }
   }
-`
+`;
 
-export const menuAnimation = css`
+export const menuAnimation: FlattenSimpleInterpolation = css`
   /* MOUNTING */
   .menu-animation-enter {
     opacity: 0.01;
@@ -129,4 +136,4 @@ export const menuAnimation = css`
       transition: ${theme.animations.speed.quick} ease-out;
     }
   }
-`
+`;

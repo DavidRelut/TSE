@@ -1,14 +1,19 @@
-import React from "react"
-import styled from "styled-components"
-import { theme } from "../../theme"
+import { ComponentProps, JSX } from "react";
+import styled from "styled-components";
+import { theme } from "@/theme/themeSystem";
 
-export default function Tab({ label, Icon, onClick, className }) {
+type TabProps = {
+  label: string;
+  Icon: JSX.Element;
+} & ComponentProps<"button">;
+
+export default function Tab({ label, Icon, onClick, className }: TabProps) {
   return (
     <TabStyled onClick={onClick} className={className}>
-      <div className="icon">{Icon}</div>
+      {Icon && <div className="icon">{Icon}</div>}
       {label && <span className="label">{label}</span>}
     </TabStyled>
-  )
+  );
 }
 
 const TabStyled = styled.button`
@@ -53,4 +58,4 @@ const TabStyled = styled.button`
   .label {
     margin-left: 13px;
   }
-`
+`;

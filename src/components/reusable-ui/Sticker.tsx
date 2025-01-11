@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme/themeSystem";
+import { theme } from "@/theme/themeSystem";
 
 type StickerProps = {
   label?: string;

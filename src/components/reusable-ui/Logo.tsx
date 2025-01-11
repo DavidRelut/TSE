@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme/themeSystem";
+import { theme } from "@/theme/themeSystem";
 import { ComponentProps } from "react";
 
 type LogoProps = ComponentProps<"div">;

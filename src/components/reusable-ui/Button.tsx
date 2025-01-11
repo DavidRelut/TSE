@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { theme } from "../../theme/themeSystem";
+import { theme } from "@/theme/themeSystem";
 import { ComponentProps, JSX } from "react";
 
 type ButtonVersion = "normal" | "success";

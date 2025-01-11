@@ -1,6 +1,6 @@
 import { ComponentProps, JSX } from "react";
 import styled from "styled-components";
-import { theme } from "../../theme/themeSystem";
+import { theme } from "@/theme/themeSystem";
 
 type TabProps = {
   label: string;

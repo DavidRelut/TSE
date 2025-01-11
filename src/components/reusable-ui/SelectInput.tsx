@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme/themeSystem";
+import { theme } from "@/theme/themeSystem";
 import { ComponentProps, JSX } from "react";
 
 type Option = {

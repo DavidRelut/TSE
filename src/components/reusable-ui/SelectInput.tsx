@@ -60,12 +60,4 @@ const SelectInputStyled = styled.div`
     width: 100%;
     outline: 0;
   }
-`; // commente/décommente une ligne CSS pour connaître son effet sur le composant
-
-// Attention à deux props "value":
-// 1️⃣ value dans <select/> (valeur selectionnée) ==> onChange est lié à cette value
-// 2️⃣ value dans <option/> (valeur disponible)
-// const options = [
-//   { optionValue: "", label: "", selected: true },
-//   { optionValue: "", label: "", selected: false },
-// ]
+`;

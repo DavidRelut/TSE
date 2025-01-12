@@ -4,7 +4,7 @@ export const EMPTY_PRODUCT: MenuProduct = {
   id: "",
   title: "",
   imageSource: "",
-  price: "0",
+  price: 0,
   isAvailable: true,
   isPublicised: false,
 } as const;

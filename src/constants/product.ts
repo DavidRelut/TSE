@@ -2,7 +2,7 @@ import { MenuProduct } from "@/types/Product";
 
 export const EMPTY_PRODUCT: MenuProduct = {
   id: "",
-  title: "Produit vide",
+  title: "",
   imageSource: "",
   price: "0",
   isAvailable: true,

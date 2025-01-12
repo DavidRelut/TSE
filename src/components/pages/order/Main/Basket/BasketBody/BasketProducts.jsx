@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {
   BASKET_MESSAGE,
   IMAGE_COMING_SOON,
-} from "../../../../../../enums/product";
+} from "../../../../../../constants/product";
 import BasketCard from "./BasketCard";
 import { useOrderContext } from "../../../../../../context/OrderContext";
 import { findObjectById } from "../../../../../../utils/array";

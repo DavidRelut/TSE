@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { fakeBasket } from "../fakeData/fakeBasket";
+// import { fakeBasket } from "@/fakeData/fakeBasket";
 import {
   deepClone,
   findObjectById,
   findIndexById,
   removeObjectById,
-} from "../utils/array";
-import { setLocalStorage } from "../utils/window";
+} from "@/utils/array";
+import { setLocalStorage } from "@/utils/window";
+import { BasketProductQuantity } from "@/types/Product";
 
 export const useBasket = () => {
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useState<BasketProductQuantity[]>([]);
 
-  const handleAddToBasket = (idProductToAdd, username) => {
+  const handleAddToBasket = (idProductToAdd: string, username: string) => {
     const basketCopy = deepClone(basket);
     const productAlreadyInBasket = findObjectById(idProductToAdd, basketCopy);
 
@@ -24,9 +25,9 @@ export const useBasket = () => {
   };
 
   const incrementProductAlreadyInBasket = (
-    idProductToAdd,
-    basketCopy,
-    username
+    idProductToAdd: string,
+    basketCopy: BasketProductQuantity[],
+    username: string
   ) => {
     const indexOfBasketProductToIncrement = findIndexById(
       idProductToAdd,
@@ -38,10 +39,10 @@ export const useBasket = () => {
   };
 
   const createNewBasketProduct = (
-    idProductToAdd,
-    basketCopy,
-    setBasket,
-    username
+    idProductToAdd: string,
+    basketCopy: BasketProductQuantity[],
+    setBasket: React.Dispatch<React.SetStateAction<BasketProductQuantity[]>>,
+    username: string
   ) => {
     // we do not re-create a whole product, we only add the extra info a basket product has in comparison to a menu product
     const newBasketProduct = { id: idProductToAdd, quantity: 1 };
@@ -50,7 +51,10 @@ export const useBasket = () => {
     setLocalStorage(username, newBasket);
   };
 
-  const handleDeleteBasketProduct = (idBasketProduct, username) => {
+  const handleDeleteBasketProduct = (
+    idBasketProduct: string,
+    username: string
+  ) => {
     const basketUpdated = removeObjectById(idBasketProduct, basket);
     setBasket(basketUpdated);
     setLocalStorage(username, basketUpdated);

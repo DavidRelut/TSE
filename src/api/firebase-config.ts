@@ -1,7 +1,7 @@
 import { initializeApp, FirebaseApp } from "firebase/app";
 import { Firestore, getFirestore } from "firebase/firestore";
 
-// 1. Définir le type de FirebaseConfig
+// 1. Définition du type de FirebaseConfig
 type FirebaseConfig = {
   apiKey: string;
   authDomain: string;

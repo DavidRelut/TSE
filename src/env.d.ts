@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+// 1. Définir le type de ImportMetaEnv
 type ImportMetaEnv = {
   readonly VITE_APP_API_KEY: string;
   readonly VITE_APP_AUTH_DOMAIN: string;
@@ -9,6 +10,7 @@ type ImportMetaEnv = {
   readonly VITE_APP_APP_ID: string;
 };
 
+// 2. Définir le type de ImportMeta
 type ImportMeta = {
   readonly env: ImportMetaEnv;
 };
